@@ -26,7 +26,7 @@ def main() -> None:
     if not input_path.exists():
         raise FileNotFoundError(f"Input ONNX not found: {input_path}")
 
-    weight_type = QuantType.QInt8 if args.weight_type == "QInt8" else QuantType.QUInt8
+    weight_type = QuantType.QUInt8 if args.weight_type == "QInt8" else QuantType.QUInt8
 
     quantize_dynamic(
         model_input=str(input_path),
